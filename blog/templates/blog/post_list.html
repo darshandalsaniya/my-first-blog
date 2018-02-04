@@ -4,22 +4,23 @@
     </head>
     <body>
     	<h3><p>Hello!</p></h3>
-        <h3><p>Good Morning</p></h3>
+        <h3><p>Good Morning Hathudi</p></h3>
         <div>
             <h1><a href="/">Game of Thrones Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 05.02.2018, 04:04 AM</p>
-
-            <h2><a href="">My first post</a></h2>
-            <p>Several royal families desire the Iron Throne to gain control of Westeros. Whilst kingdoms fight each other for power, a sinister force lurks beyond the Wall in the north.</p>
-        </div>
+        {% for post in posts %}
+    		<div>
+		        <p>published: {{ post.published_date }}</p>
+		        <h1><a href="">{{ post.title }}</a></h1>
+		        <p>{{ post.text|linebreaksbr }}</p>
+		    </div>
+		{% endfor %}
 
         <div>
             <p>published: 05.02.2018, 04:08 AM</p>
             <h2><a href="">My second post</a></h2>
-            <p>The eighth and final season of the fantasy drama television series Game of Thrones was confirmed by HBO in July 2016. Unlike the first six seasons that all consisted of ten episodes, and the seventh which consisted of seven episodes, the eighth season will consist of only six episodes, and is set to air in 2019.</p>
+            <p>The eighth and final season of the fantasy drama television series Game of Thrones was confirmed by HBO in July 2016. The eighth season will consist of only six episodes, and is set to air in 2019.</p>
         </div>
     </body>
 </html>
